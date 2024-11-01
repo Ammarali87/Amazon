@@ -59,7 +59,7 @@ function Rating (props:{
    ))}
    </div>
 }
-export default Rating    const { prositem d, }
+export default Rating     
 
 
 

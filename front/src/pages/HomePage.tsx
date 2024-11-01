@@ -5,8 +5,34 @@ import ProdcutItem from  "../components/LoadingBox"
 import ProdcutItem from  "../components/MessageBox"
 import {Product} from "../types/Product"
 
+
+
+
+
+
+
 export default function HomePage(){
-	return(
+
+  type State = {
+    prodcuts : Product[] 
+     loadin :boolean 
+     error : string 
+    }
+
+    type Action = |{ 
+      type :"FETCH _REQUEST "} 
+      | { 
+        type : "FETCH_SUCCESS"
+         payload : Product[]
+      }
+      | { 
+        type : "FETCH_FAIL"
+         payload : String 
+      }
+
+       // const intialState : State ={}
+
+    return(
 		<div>
     <Container fluid className="mt-3 ">
           <Row>

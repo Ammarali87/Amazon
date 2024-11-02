@@ -1,5 +1,5 @@
 
-
+ /* prodcut-img */
 img {
 	width: 100%;
 	max-width: 400px;
@@ -7,4 +7,8 @@ img {
   
 .rating span {
 	color: rgb(255, 217, 3);
+}
+
+img .larg{
+ max-width: 100%;  /* no x grow  */
 }

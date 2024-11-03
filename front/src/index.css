@@ -12,3 +12,15 @@ img {
 img .larg{
  max-width: 100%;  /* no x grow  */
 }
+
+/* App.css */
+
+.dark {
+	background-color: #121212;  
+	color: #ffffff;            /* Light text */
+  }
+  
+  .light {
+	background-color: #ffffff;    /* Light background */
+	color: #000000;               /* Dark text */
+}

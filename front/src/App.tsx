@@ -1,10 +1,33 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap'; 
 import { Outlet } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { StoreContext } from './Store'; // Adjust path if needed
+import './App.css';
 
 function App() {
+  const { state, dispatch } = useContext(StoreContext);
+    const {mode} = state
+      //  can not change state.mode this why we make var to store  newMode T , F
+ 
+  //     const toggleTheme = () => {
+  //   const newMode = state.mode === "dark" ? "light" : "dark";
+  //   dispatch({ type: "SWITCH_MODE" });
+  //   localStorage.setItem("mode", newMode);
+  // };
+
+  // Set theme on initial load
+   
+   
+  useEffect(() => {
+    localStorage.setItem("mode", mode);
+    document.body.setAttribute("data-bs-theme", mode);
+  }, [mode]);
+
+  
+  
   return (
-    <div className="">
-      <header className=''>
+    <div className={state.mode}> {/* Apply theme as a class */}
+      <header>
         <Navbar bg="dark" expand="lg" variant="dark">
           <Container fluid>
             <Navbar.Brand>Amazon E-commerce</Navbar.Brand>
@@ -12,15 +35,20 @@ function App() {
               <Nav.Link href="/cart">Cart</Nav.Link>
               <Nav.Link href="/signin">Sign In</Nav.Link>
             </Nav>
+            // logic to make text   
+            <Button onClick={toggleTheme} variant="outline-light" className="ms-3">
+              Switch to {state.mode === "dark" ? "Light" : "Dark"} Mode
+            </Button>
           </Container>
         </Navbar>
       </header>
+      
       <main>
-        
-      <Container>
-        <Outlet/>
-      </Container>
+        <Container>
+          <Outlet />
+        </Container>
       </main>
+      
       <footer className="bg-dark text-white text-center p-3">
         <div>All rights reserved</div>
       </footer>

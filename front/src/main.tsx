@@ -31,11 +31,13 @@ const router = createBrowserRouter(
 // Render the app
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <StoreProvider>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
     </HelmetProvider>
+    </StoreProvider>
   </StrictMode>
 );

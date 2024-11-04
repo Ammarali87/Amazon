@@ -15,7 +15,7 @@ const initialState: AppState = {
         (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
 };
 
-// Reducer function to toggle the mode
+ // Reducer function to toggle the mode
 const reducer = (state: AppState, action: AppAction): AppState => {
   switch (action.type) {
     case "SWITCH_MODE":

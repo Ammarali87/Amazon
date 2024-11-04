@@ -8,7 +8,8 @@ function App() {
   const { state, dispatch } = useContext(StoreContext);
     const {mode} = state
       //  can not change state.mode this why we make var to store  newMode T , F
- 
+    //  const {state:{mode} , dispatch} = useContext(StoreContext)
+      
   //     const toggleTheme = () => {
   //   const newMode = state.mode === "dark" ? "light" : "dark";
   //   dispatch({ type: "SWITCH_MODE" });
@@ -16,14 +17,15 @@ function App() {
   // };
 
   // Set theme on initial load
-   
-   
-  useEffect(() => {
-    localStorage.setItem("mode", mode);
-    document.body.setAttribute("data-bs-theme", mode);
-  }, [mode]);
 
   
+  //  wrong  setAttru take two para ("", value)
+    
+ useEffect(() => {
+  localStorage.setItem("mode", mode);
+  document.body.setAttribute("data-bs-theme", mode);
+}, [mode]);
+
   
   return (
     <div className={state.mode}> {/* Apply theme as a class */}
@@ -36,8 +38,12 @@ function App() {
               <Nav.Link href="/signin">Sign In</Nav.Link>
             </Nav>
             // logic to make text   
-            <Button onClick={toggleTheme} variant="outline-light" className="ms-3">
-              Switch to {state.mode === "dark" ? "Light" : "Dark"} Mode
+            <Button    
+              onClick={() => dispatch({ type: 'SWITCH_MODE' })}
+              variant="outline-light"
+              className="ms-3"
+            >
+              Switch to {mode === 'dark' ? 'Light' : 'Dark'} Mode
             </Button>
           </Container>
         </Navbar>

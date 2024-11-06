@@ -1,4 +1,4 @@
-// const { MongoClient } = require('mongodb');
+// const { MongoClient } = require( 'mongodb');
 
 // // Connection URI
 // const uri = "mongodb://localhost:27017"; // Adjust with your MongoDB URI
@@ -7,12 +7,12 @@
 // const client = new MongoClient(uri);
  
 // async function connect() {
-//   try {
+//   try {   
 //     await client.connect();
 //     console.log("Connected to MongoDB");
 //     const db = client.db("yourDatabaseName");
 //     const collection = db.collection("products");
-    
+
 // 	return { db, collection };
 
 // } catch (error) {
@@ -33,7 +33,6 @@ async function createProduct(product) {
 
    //    createProduct({ name: "Example Product", slug: "example-product", rating: 4.5, numViews: 100 });
 
-
 ///////////////////////////   get / find ddddd
 
 // async function getProducts(filter = {}) {
@@ -41,14 +40,11 @@ async function createProduct(product) {
 // 	const products = await collection.find(filter).toArray();
 // 	console.log("Products found:", products);
 // 	return products;
-//   }
-
-  /////////////////////    
+//  }
+/////////////////////
+        
 //   getProducts({ rating: { $gte: 4 } }); // Finds products with a rating of 4 or higher
-
-
-
-
+   
 
 // async function deleteProduct(slug) {
 // 	const { collection } = await connect();

@@ -1,4 +1,4 @@
-import { prop, modelOptions , getModelForClass } from "@typegoose/typegoose";
+import { prop, modelOptions, getModelForClass } from "@typegoose/typegoose";
 
 @modelOptions({ schemaOptions: { timestamps: true } })
 export class Product {
@@ -17,11 +17,4 @@ export class Product {
   public numViews!: number;
 }
 
- export const ProductModel = getModelForClass(Product)
-
-
-
-
-
-
-
+export const ProductModel = getModelForClass(Product);
